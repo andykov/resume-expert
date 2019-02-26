@@ -1,6 +1,29 @@
 /*------------------------------------*\
 =btn basic styles
 \*------------------------------------*/
+$gray-darkest:                hsl(0, 0%, 10%);
+$gray:                        hsl(0, 0%, 50%) !default;
+$gray-light:                  hsl(0, 0%, 60%) !default;
+$gray-lightest:               hsl(0, 0%, 90%) !default;
+
+$color-main:                  hsl(208, 98%, 43%);
+
+$text-color:                  $gray-darkest !default;
+$text-color-muted:            $gray !default;
+
+$line-height:                 1.5 !default;
+
+$field-padding-vertical:      5px !default;
+$field-padding-horizontal:    12px !default;
+
+$border-radius:               3px !default;
+
+$opacity:                     0.7;
+
+@mixin field-focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba($color-main, $opacity);
+}
 
 .btn {
     box-sizing: border-box;
@@ -18,11 +41,13 @@
     user-select: none;
     text-align: center;
     font-size: 1em;
+    line-height: (19 / 16);
     font-family: inherit;
+    font-weight: 600;
     line-height: $line-height;
     text-decoration: none;
-    text-transform: none;
-    color: $text-color;
+    text-transform: uppercase;
+    color: #2F5BEA;
     background-color: $gray-lightest;
     background-image: none;
     cursor: pointer;
@@ -30,7 +55,7 @@
     &:hover,
     &:focus {
       text-decoration: none;
-      color: $text-color;
+      color: #2F5BEA;
       background-color: darken($gray-lightest, 10%);
       // border-color: darken($gray-lighter, 12%);
     }
@@ -48,7 +73,7 @@
     &:disabled {
       opacity: $opacity;
       cursor: not-allowed;
-      color: $text-color;
+      color: #2F5BEA;
       background-color: $gray-lightest;
       // border-color: $gray-lighter;
   
@@ -62,8 +87,21 @@
     //   vertical-align: middle;
     // }
   
+    &.is-white {
+        background-color: #fff;
+        border-color: transparent;
+        color: #2F5BEA;
+
+      &:hover,
+      &:focus {
+        background-color: #f9f9f9;
+        border-color: transparent;
+        color: #2F5BEA;
+        box-shadow: 0 0 0 0.125em rgba(255,255,255,.25);
+      }
+    }
   
-  
+
     // &--main {
     //   color: #fff;
     //   background-color: $color-main;

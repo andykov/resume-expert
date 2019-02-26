@@ -12,12 +12,16 @@
 		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
 	</head>
 	<body>
+		
+		<header class="header">
+			<div class="header_inner">
+				<a class="header_logo" href="/"><img src="../img/logo.svg" alt="RESUME EXPERT"></a>
+				<a href="#" class="btn is-white">Получить</a>
+			</div>
+		</header>
+
 		<div class="intro">
 			<div class="container">
-				<header class="header">
-					<a class="header_logo" href="/"><img src="../img/logo.svg" alt="RESUME EXPERT"></a>
-					<a href="#" class="btn">Получить</a>
-				</header>
 				<div class="intro-cont">
 					<div class="intro-cont_text">
 						<h1>Найди работу на 5000 ₽/мес. больше чем ты планируешь</h1>
@@ -28,7 +32,7 @@
 		</div>
 
 		<div class="container">
-			<h2>Основные ошибки при составлении резюме</h2>
+			<h2 class="aligncenter">Основные ошибки при составлении резюме</h2>
 			<div class="text-block">
 				<div class="text-block_item">
 					<div class="text-block_title">
@@ -77,14 +81,21 @@
 
 		<div class="block-action">
 			<div class="container">
-				<h2>Узнай как правильно написать резюме прямо сейчас!</h2>
-				<div class="subtitle">Получи на почту документ «Как найти хорошую работу»</div>
-				<form action="">
-					<div class="field">
-						<input type="email" class="field_input">
-						<input type="submit" class="field_btn">
+				<div class="grid">
+					<div class="block-action_inner">
+						<h2 class="h2">Узнай как правильно написать резюме прямо сейчас!</h2>
+						<div class="subtitle">Получи на почту документ «Как найти хорошую работу»</div>
+						<form action="" class="form">
+							<div class="field-group">
+								<div class="field">
+									<input type="email" class="field_input" placeholder="Введите свой e-mail">
+								</div>
+								<input type="submit" class="btn is-white" value="Получить">
+							</div>
+						</form>
+						<a href="#">Смотреть сокращенную версию документа</a>
 					</div>
-				</form>
+				</div>
 			</div>
 		</div>
 
@@ -113,14 +124,65 @@
 			</div>
 		</div>
 
+		<section class="faq">
+			<div class="container">
+				<h2 class="faq_title">Вопросы ответы</h2>
+				<div class="faq_inner">
+					<div class="faq_col">
+						<div class="faq_item"><span class="faq_question js-faq">+ Вопросы и ответы</span>
+							<div class="faq_answer"> 
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus optio fuga cupiditate, inventore iste porro possimus.</p>
+							</div>
+						</div>
+					</div>
+					<div class="faq_col">
+						<div class="faq_item"><span class="faq_question js-faq">+ Вопросы и ответы</span>
+							<div class="faq_answer" style="display: none;">
+								<p>Lorem, ipsum.</p>
+							</div>
+						</div>
+					</div>
+					<div class="faq_col">
+						<div class="faq_item"><span class="faq_question js-faq">+ Вопросы и ответы</span>
+							<div class="faq_answer">
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est laudantium quae vitae vel quos, officiis repellat expedita ea nulla dicta!</p>
+								<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam esse quasi excepturi accusantium temporibus, sapiente quisquam commodi numquam quas nesciunt suscipit nobis dolor et, minima ea possimus officia, amet quam nostrum mollitia corporis ipsa modi necessitatibus.</p>
+							</div>
+						</div>
+					</div>
+					<div class="faq_col">
+						<div class="faq_item"><span class="faq_question js-faq">+ Вопросы и ответы</span>
+							<div class="faq_answer"> 
+								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel facere suscipit sint dicta hic numquam excepturi laborum minima nihil quod? Ad autem suscipit eaque?</p>
+							</div>
+						</div>
+					</div>
+					<div class="faq_col">
+						<div class="faq_item"><span class="faq_question js-faq">+ Вопросы и ответы</span>
+							<div class="faq_answer">
+								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque, doloribus.</p>
+							</div>
+						</div>
+					</div>
+					<div class="faq_col">
+						<div class="faq_item"><span class="faq_question js-faq">+ Вопросы и ответы</span>
+							<div class="faq_answer">
+								<p>Lorem ipsum dolor sit.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 
 
 		
 		<!-- <script src="../js/vendors/three.min.js"></script>
 		<script src="../js/vendors/Sky.js"></script>
 		<script src="../js/vendors/hammer.min.js"></script>
-		<script src="../js/vendors/charming.min.js"></script>
-		<script src="../js/vendors/TweenMax.min.js"></script> -->
+		<script src="../js/vendors/charming.min.js"></script> -->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script src="../js/main.bundle.js"></script>
 	</body>
 </html>
