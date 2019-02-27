@@ -38,6 +38,56 @@
 // @import "components/icons";
 // @import "components/animations";
 
+.slick-dots {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+        margin: 0;
+        padding: 15px 9.5px;
+    }
+
+    button {
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        padding: 0;
+        background-color: transparent;
+        border: 1px solid #9B9B9B;
+        font-size: 0;
+    }
+
+    .slick-active {
+        button {
+            background: #2F5BEA;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-color: #2F5BEA;
+        }
+    }
+}
+.block-experts {
+    padding: 120px 0 35px;
+    &_title {
+        text-align: center;
+        padding-bottom: 25px;
+    }
+}
+.experts {
+    @include row();
+
+    &_item {
+        @include make-col(6);
+    }
+    .slick-list {
+        padding-bottom: 45px;
+    }
+}
+
 .container {
     @include container ();
 }
@@ -50,7 +100,10 @@
     display: flex;
 
     .field {
-        width: 100%;
+        flex-basis: auto;
+        flex-grow: 1;
+        flex-shrink: 1;
+
         input {
             border-radius: 5px 0 0 5px;
             border: 0;
@@ -60,8 +113,10 @@
 
     .btn {
         border-radius: 0 5px 5px 0;
+        flex-basis: auto;
+        flex-grow: 0;
         flex-shrink: 0;
-        width: 56px;
+        width: 195px;
     }
 }
 
@@ -81,6 +136,7 @@
         &:focus {
             transition: background-color 0.3s;
             background-color: #ededed;
+            outline: none;
         }
     }
 }
@@ -127,6 +183,10 @@
     }
 }
 
+.text-block-wrap {
+    padding: 40px 0;
+}
+
 .text-block {
     @include row ();
     padding-top: 50px;
@@ -155,6 +215,40 @@
     }
 }
 
+.need {
+    // padding: 120px 0;
+    padding: 7.3% 0;
+
+    &_inner {
+        @media (min-width: $screen-lg) {
+            display: flex;
+        }
+    }
+    &_img {
+        text-align: center;
+        
+        @media (min-width: $screen-lg) {
+            display: flex;
+            justify-content: flex-end;
+            width: 50%;
+        }
+        
+        img {
+            @media (min-width: $screen-md) {
+                max-width: 686px;
+            }
+        }
+    }
+    &_text {
+        padding-top: 40px;
+        @media (min-width: $screen-lg) {
+            width: 50%;
+            padding-left: 70px;
+            padding-top: 0;
+        }
+    }
+}
+
 .block-action {
     background-color: #2F5BEA;
     padding: 12.1% 0;
@@ -162,7 +256,8 @@
     &_inner {
         @include make-col(12);
         @include col(md, 10);
-        @include col(lg, 6);
+        @include col(lg, 8);
+        @include col(xl, 6);
 
         margin: 0 auto;
         text-align: center;
@@ -173,6 +268,9 @@
         }
         .subtitle {
             margin-bottom: 8px;
+        }
+        a {
+            color: #fff;
         }
     }
 
@@ -236,28 +334,81 @@
     align-items: flex-start;
     display: flex;
     text-align: left;
+    background: #FFFFFF;
+    border: 1px solid #E7EAEE;
+    box-shadow: 0px 2px 4px rgba(44, 46, 48, 0.0747283);
+    border-radius: 5px;
+    padding: 25px 25px 30px;
 }
 
-.card-left, .card-right {
+.card_left, .card_right {
     flex-basis: auto;
     flex-grow: 0;
     flex-shrink: 0;
 }
-.card-left {
-    margin-right: 1rem;
+.card_left {
+    margin-right: 20px;
 }
-.image {
+.card_img {
+    background-color: #ccc;
     width: 60px;
     height: 60px;
     display: block;
     position: relative;
+    border-radius: 60px;
+    overflow: hidden;
 }
-.card-content {
+.card_right {
     flex-basis: auto;
     flex-grow: 1;
     flex-shrink: 1;
     text-align: left;
 }
-.card .content:not(:last-child) {
+.card_content {
+    color: #7E8085;
+    @include rem-size(13px);
+    line-height: (19 / 13);
+
+    span {
+        display: block;
+        margin-bottom: 7px;
+    }
+
+    strong, b {
+        color: #2C2E30;
+        @include rem-size(16px);
+        line-height: (19 / 16);
+        font-weight: normal;
+    }
+}
+.card_content:not(:last-child) {
     margin-bottom: .75rem;
+    
+}
+
+.footer {
+    padding: 26px 0;
+
+    &_inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &_links {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+
+        li:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        a {
+            color: #54565A;
+            @include rem-size(14px);
+            line-height: (17 / 14);
+        }
+    }
 }
