@@ -38,6 +38,95 @@
 // @import "components/icons";
 // @import "components/animations";
 
+.form {
+    .btn {
+        text-transform: uppercase;
+    }
+}
+
+.intro {
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+    padding-top: 120px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: url('../img/intro-bg.svg') no-repeat;
+        background-size: cover;
+        background-position: left bottom;
+        z-index: -1;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: url('../img/intro-img2.png') no-repeat;
+        background-position: calc(100% - 160px) calc(100% - 110px);
+        background-size: calc((780 / 1920) * 100%);
+        z-index: -1;
+    }
+
+    .container {
+        height: 100%;
+    }
+
+    &_inner {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    &_cont {
+        @include make-col(8);
+        color: #fff;
+        margin-top: -16%;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: -80px;
+            top: -117px;
+            width: 281px;
+            height: 281px;
+            background: url('../img/texture-dots-circle.svg') no-repeat;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 900;
+            line-height: (59 / 48);
+            color: #fff;
+            margin-bottom: 22px;
+        }
+    
+        p {
+            font-size: 18px;
+            line-height: (34 / 18);
+            margin-bottom: 12px;
+        }
+        span {
+            font-size: 16px;
+            line-height: (19 / 16);
+        }
+        
+        .form {
+            max-width: 523px;
+            margin-bottom: 23px;
+        }
+    }
+}
+
 .slick-dots {
     margin: 0;
     padding: 0;
@@ -71,7 +160,9 @@
     }
 }
 .block-experts {
-    padding: 120px 0 35px;
+    padding: 8.4375% 0 35px;
+    background-color: #F6F8F9;
+
     &_title {
         text-align: center;
         padding-bottom: 25px;
@@ -142,59 +233,63 @@
 }
 
 .intro {
-    height: 100vh;
-    position: relative;
-    z-index: 1;
-    padding-top: 120px;
-
-    &:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        // left: -11.17%;
-        // right: -17.32%;
-        // top: -1.72%;
-        // bottom: 72.92%;
-        background: url('../img/intro-bg.svg') no-repeat;
-        // background: #2F5BEA;
-        // border-radius: 536px;
-        // transform: rotate(-15deg);
-        background-size: 100% 100%;
-        z-index: -1;
-    }
+    
 }
 
 .header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     z-index: 2;
     padding: 32px 0;
 
+    &_logo {
+        margin-left: 13px;
+    }
+
     &_inner {
         @include container ();
         display: flex;
         align-items: center;
         justify-content: space-between;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            right: 60px;
+            top: -204px;
+            width: 281px;
+            height: 281px;
+            background: url(../img/texture-dots-circle.svg) no-repeat;
+        }
+    }
+
+    .btn {
+        @include rem-size(17px);
+        line-height: (20 / 17);
+        text-transform: none;
+        width: 170px;
+        height: 46px;
+        padding-top: 13.5px;
+        padding-bottom: 13.5px;
     }
 }
 
 .text-block-wrap {
-    padding: 40px 0;
+    padding-bottom: 40px;
 }
 
 .text-block {
     @include row ();
-    padding-top: 50px;
+    padding-top: 38px;
+    padding-bottom: 30px;
 
     &_item {
         @include make-col(12);
         @include col(md, 6);
         @include col(lg, 4);
+        padding-bottom: 56px;
         
         h3 {
             margin-bottom: 0;
@@ -217,7 +312,7 @@
 
 .need {
     // padding: 120px 0;
-    padding: 7.3% 0;
+    padding: ((120 / 1920) * 100%) 0 ((120 / 1920) * 100%);
 
     &_inner {
         @media (min-width: $screen-lg) {
@@ -241,17 +336,60 @@
     }
     &_text {
         padding-top: 40px;
+        @include rem-size(24px);
+        line-height: (29 / 24);
+
         @media (min-width: $screen-lg) {
             width: 50%;
             padding-left: 70px;
             padding-top: 0;
+        }
+
+        span {
+            color: #2F5BEA;
+            text-transform: uppercase;
+            @include rem-size(16px);
+            line-height: (19 / 16);
+            font-weight: 500;
+        }
+
+        h2 {
+            margin-top: 20px;
+            margin-bottom: 32px;
+        }
+
+        ul {
+            counter-reset: list;
+            list-style: none;
+            padding: 3px 0 0;
+            margin: 0;
+        }
+        li {
+            padding: 15px 0;
+
+            &::before {
+                display: inline-block;
+                counter-increment: list;
+                content: counter(list);
+                width: 40px;
+                height: 40px;
+                background-color: #2F5BEA;
+                @include rem-size(24px);
+                line-height: (29 / 24);
+                font-weight: 500;
+                border-radius: 40px;
+                text-align: center;
+                line-height: 40px;
+                color: #fff;
+                margin-right: 20px;
+            }
         }
     }
 }
 
 .block-action {
     background-color: #2F5BEA;
-    padding: 12.1% 0;
+    padding: ((162 / 1920) * 100%) 0;
 
     &_inner {
         @include make-col(12);
@@ -281,6 +419,13 @@
 }
 
 .faq {
+    padding: 8.4375% 0;
+
+    &_title {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
     &_inner {
         @include row ();
     }
@@ -388,6 +533,7 @@
 
 .footer {
     padding: 26px 0;
+    background-color: #F6F8F9;
 
     &_inner {
         display: flex;

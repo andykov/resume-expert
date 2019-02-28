@@ -24,6 +24,14 @@
   font-weight: bold;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Gilroy';
+  src: local('Gilroy ExtraBold'), local('Gilroy-ExtraBold'),
+      url('../fonts/Gilroy-ExtraBold.woff2') format('woff2'),
+      url('../fonts/Gilroy-ExtraBold.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
 
 /*------------------------------------*\
 =typography main
