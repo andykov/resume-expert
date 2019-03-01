@@ -69,11 +69,7 @@
         top: calc(50% + 65px);
         right: ((160 / 1920) * 100%);
         transform: translateY(-50%);
-        // bottom: 0;
-        // left: 0;
         background: url('../img/intro-img.svg') no-repeat;
-        // background-position: calc(100% - 160px) calc(100% - 110px);
-        // background-size: calc((780 / 1920) * 100%);
         z-index: -1;
 
         width: ((780 / 1920) * 100%);
@@ -100,21 +96,28 @@
     &_cont {
         
         color: #fff;
-        margin-top: -16%;
+        
         position: relative;
 
         @media (min-width: $screen-md) {
             @include make-col(8);
+            margin-top: -16%;
         }
 
         &::before {
             content: '';
             position: absolute;
             left: -80px;
-            top: -117px;
-            width: 281px;
-            height: 281px;
+            top: -58px;
+            width: 141px;
+            height: 141px;
             background: url('../img/texture-dots-circle.svg') no-repeat;
+            background-size: cover;
+            @media (min-width: $screen-md) {
+                top: -117px;
+                width: 281px;
+                height: 281px;
+            }
         }
 
         h1 {
@@ -300,11 +303,17 @@
         &::before {
             content: '';
             position: absolute;
-            right: 60px;
-            top: -204px;
-            width: 281px;
-            height: 281px;
+            right: 30px;
+            top: -102px;
+            width: 141px;
+            height: 141px;
             background: url(../img/texture-dots-circle.svg) no-repeat;
+            background-size: cover;
+            @media (min-width: $screen-md) {
+                top: -204px;
+                width: 281px;
+                height: 281px;
+            }
         }
     }
 

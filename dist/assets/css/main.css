@@ -1203,7 +1203,6 @@ a.btn--disabled {
 
 .intro_cont {
   color: #fff;
-  margin-top: -16%;
   position: relative;
 }
 
@@ -1213,6 +1212,7 @@ a.btn--disabled {
     max-width: 66.66667%;
     padding-left: 15px;
     padding-right: 15px;
+    margin-top: -16%;
   }
 }
 
@@ -1220,10 +1220,19 @@ a.btn--disabled {
   content: '';
   position: absolute;
   left: -80px;
-  top: -117px;
-  width: 281px;
-  height: 281px;
+  top: -58px;
+  width: 141px;
+  height: 141px;
   background: url("../img/texture-dots-circle.svg") no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .intro_cont::before {
+    top: -117px;
+    width: 281px;
+    height: 281px;
+  }
 }
 
 .intro_cont h1 {
@@ -1502,11 +1511,20 @@ a.btn--disabled {
 .header_inner::before {
   content: '';
   position: absolute;
-  right: 60px;
-  top: -204px;
-  width: 281px;
-  height: 281px;
+  right: 30px;
+  top: -102px;
+  width: 141px;
+  height: 141px;
   background: url(../img/texture-dots-circle.svg) no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .header_inner::before {
+    top: -204px;
+    width: 281px;
+    height: 281px;
+  }
 }
 
 .action-row {
