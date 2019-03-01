@@ -94,10 +94,13 @@ $opacity:                     0.7;
         @include rem-size(17px);
         line-height: (20 / 17);
         text-transform: none;
-        width: 170px;
+        width: 140px;
         height: 46px;
         padding-top: 13.5px;
         padding-bottom: 13.5px;
+        @media (min-width: $screen-md) {
+          width: 170px;
+        }
       &:hover,
       &:focus {
         background-color: #f9f9f9;
