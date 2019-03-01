@@ -1104,12 +1104,40 @@ a.btn--disabled {
   background-color: #fff;
   border-color: transparent;
   color: #2F5BEA;
+  font-size: 17px;
+  font-size: 1.0625rem;
+  line-height: 1.17647;
+  text-transform: none;
+  width: 170px;
+  height: 46px;
+  padding-top: 13.5px;
+  padding-bottom: 13.5px;
 }
 
 .btn.is-white:hover, .btn.is-white:focus {
   background-color: #f9f9f9;
   border-color: transparent;
   color: #2F5BEA;
+}
+
+.btn.is-blue {
+  background-color: #2F5BEA;
+  border-color: transparent;
+  color: #fff;
+  font-size: 17px;
+  font-size: 1.0625rem;
+  line-height: 1.17647;
+  text-transform: none;
+  width: 170px;
+  height: 46px;
+  padding-top: 13.5px;
+  padding-bottom: 13.5px;
+}
+
+.btn.is-blue:hover, .btn.is-blue:focus {
+  background: rgba(47, 91, 234, 0.8);
+  border-color: transparent;
+  color: #fff;
 }
 
 .form .btn {
@@ -1139,14 +1167,16 @@ a.btn--disabled {
 .intro:after {
   content: '';
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  top: calc(50% + 65px);
+  right: 8.33333%;
+  transform: translateY(-50%);
   background: url("../img/intro-img2.png") no-repeat;
-  background-position: calc(100% - 160px) calc(100% - 110px);
-  background-size: calc((780 / 1920) * 100%);
   z-index: -1;
+  width: 40.625%;
+  height: 0;
+  background-size: cover;
+  background-position: center;
+  padding-top: 36%;
 }
 
 .intro .container {
@@ -1235,7 +1265,7 @@ a.btn--disabled {
 }
 
 .block-experts {
-  padding: 8.4375% 0 35px;
+  padding: calc((120 / 1920) * 100%) 0 35px;
   background-color: #F6F8F9;
 }
 
@@ -1415,19 +1445,36 @@ a.btn--disabled {
   background: url(../img/texture-dots-circle.svg) no-repeat;
 }
 
-.header .btn {
-  font-size: 17px;
-  font-size: 1.0625rem;
-  line-height: 1.17647;
-  text-transform: none;
-  width: 170px;
-  height: 46px;
-  padding-top: 13.5px;
-  padding-bottom: 13.5px;
+.action-row {
+  margin-top: -15px;
 }
 
-.text-block-wrap {
-  padding-bottom: 40px;
+.action-row_inner {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1.375;
+  padding: 36px 40px 18px;
+  background-color: #fff;
+  box-shadow: 0px 5px 20px rgba(47, 91, 234, 0.069493);
+  border-radius: 20px;
+  position: relative;
+}
+
+.action-row_inner::before {
+  content: '';
+  background: url("../img/texture-dots-rect.png") no-repeat;
+  width: 963px;
+  height: 140px;
+  position: absolute;
+  left: -94px;
+  bottom: -40px;
+  z-index: -1;
+}
+
+.action-row .btn {
+  margin-left: 52px;
 }
 
 .text-block {
@@ -1487,7 +1534,7 @@ a.btn--disabled {
 }
 
 .need {
-  padding: 6.25% 0 6.25%;
+  padding: 8.33333% 0 6.25%;
 }
 
 @media (min-width: 992px) {
@@ -1575,6 +1622,36 @@ a.btn--disabled {
 .block-action {
   background-color: #2F5BEA;
   padding: 8.4375% 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.block-action .path-1,
+.block-action .path-2,
+.block-action .rectangle {
+  position: absolute;
+  display: block;
+}
+
+.block-action .path-1 {
+  left: calc(100% - 665px);
+  bottom: 20px;
+  width: 348px;
+  height: 178px;
+}
+
+.block-action .path-2 {
+  top: 39.23958%;
+  left: 13.02083%;
+  width: 228px;
+  height: 125px;
+}
+
+.block-action .rectangle {
+  top: 29%;
+  left: 31.25%;
+  width: 228px;
+  height: 125px;
 }
 
 .block-action_inner {
@@ -1632,12 +1709,12 @@ a.btn--disabled {
 }
 
 .faq {
-  padding: 8.4375% 0;
+  padding: calc((120 / 1920) * 100%) 0;
 }
 
 .faq_title {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .faq_inner {
@@ -1699,10 +1776,10 @@ a.btn--disabled {
 .faq_answer {
   display: none;
   overflow: hidden;
-  background-color: #F5F5F5;
+  background-color: #F6F8F9;
   padding: 20px;
   color: #54565A;
-  box-shadow: 0 40px 30px -10px rgba(83, 83, 83, 0.24);
+  box-shadow: 0 40px 30px -10px rgba(83, 83, 83, 0.11);
   position: absolute;
   top: 100%;
   width: 100%;
