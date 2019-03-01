@@ -1362,6 +1362,7 @@ a.btn--disabled {
   flex-grow: 0;
   flex-shrink: 0;
   width: 195px;
+  height: 75px;
 }
 
 .field {

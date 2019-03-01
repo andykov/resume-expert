@@ -216,6 +216,7 @@
         flex-grow: 0;
         flex-shrink: 0;
         width: 195px;
+        height: 75px;
     }
 }
 
@@ -280,7 +281,7 @@
 
 .action-row {
     margin-top: -15px;
-    
+
     &_inner {
         display: flex;
         align-items: center;
