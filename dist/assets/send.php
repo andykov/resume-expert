@@ -15,9 +15,9 @@
         $email = urldecode($email);
         $email = trim($email);
 
-        echo $email;
-        echo "<br>";
-        echo $email;
+        // echo $email;
+        // echo "<br>";
+        // echo $email;
             
         /* Проверка правильного написания e-mail адреса */
         if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email))
