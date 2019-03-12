@@ -116,11 +116,11 @@ function scriptsVendors() {
 function html() {
   return gulp
     .src("./assets/html/**/*.html")
-    .pipe(gulp.dest("./dist/assets/html/"))
+    .pipe(gulp.dest("./dist/assets/"))
     .pipe(browsersync.stream());
 }
 
-// HTML task
+// FONTS task
 function fonts() {
   return gulp
     .src("./assets/fonts/**/*.*")
@@ -128,10 +128,28 @@ function fonts() {
     .pipe(browsersync.stream());
 }
 
+// DOCS task
+function docs() {
+  return gulp
+    .src("./assets/docs/**/*.{pdf,docx,xlsx}")
+    .pipe(gulp.dest("./dist/assets/docs/"))
+    .pipe(browsersync.stream());
+}
+
+// PHP task
+function php() {
+  return gulp
+    .src("./assets/html/**/*.php")
+    .pipe(gulp.dest("./dist/assets/"))
+    .pipe(browsersync.stream());
+}
+
 // Watch files
 function watchFiles() {
   gulp.watch("./assets/scss/**/*", gulp.series(css, browserSyncReload));
   gulp.watch("./assets/fonts/**/*.*", fonts);
+  gulp.watch("./assets/html/**/*.php", php);
+  gulp.watch("./assets/docs/**/*.{pdf,docx,xlsx}", docs);
   // gulp.watch("./assets/js/**/*", gulp.series(scriptsLint, scripts));
   gulp.watch(["./assets/js/**/*", "!./assets/js/vendors/*"], gulp.series(scripts, browserSyncReload));
 //   gulp.watch(
@@ -151,7 +169,7 @@ function watchFiles() {
 // define complex tasks
 // const js = gulp.series(scriptsLint, scripts);
 const js = gulp.series(scripts);
-const build = gulp.series(clean, gulp.parallel(css, images, html, js, scriptsVendors, fonts));
+const build = gulp.series(clean, gulp.parallel(css, images, html, php, js, scriptsVendors, fonts, docs));
 // const build = gulp.series(clean, gulp.parallel(css, images, jekyll, js));
 const watch = gulp.parallel(watchFiles, browserSync);
 
@@ -161,7 +179,9 @@ exports.css = css;
 exports.js = js;
 exports.scriptsVendors = scriptsVendors;
 exports.fonts = fonts;
+exports.docs = docs;
 exports.html = html;
+exports.php = php;
 // exports.jekyll = jekyll;
 exports.clean = clean;
 exports.build = build;

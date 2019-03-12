@@ -1202,6 +1202,7 @@ a.btn--disabled {
 }
 
 .intro_cont {
+  max-width: 630px;
   color: #fff;
   position: relative;
 }
@@ -1266,9 +1267,10 @@ a.btn--disabled {
   }
 }
 
-.intro_cont span {
+.intro_cont-file a {
   font-size: 16px;
   line-height: 1.1875;
+  color: #fff;
 }
 
 .intro_cont .form {
@@ -1434,6 +1436,7 @@ a.btn--disabled {
   width: 100%;
   height: 55px;
   transition: width 0.3s;
+  color: #242424;
 }
 
 @media (max-width: 767px) {
@@ -1551,6 +1554,10 @@ a.btn--disabled {
     line-height: 1.375;
     padding: 36px 40px 18px;
   }
+}
+
+.action-row_inner p {
+  max-width: 750px;
 }
 
 .action-row_inner::before {
