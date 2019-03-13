@@ -24,12 +24,12 @@
 					<div class="intro_cont">
 						<h1>Найди работу на 5000 больше, чем ты планируешь</h1>
 						<p>Просто оставь свой e-mail и получи документ, в котором мы расскажем как правильно составить резюме и найти хорошую работу</p>
-						<form action="send.php" method="post" class="form">
+						<form id="form" action="" method="post" class="form">
 							<div class="field-group">
 								<div class="field">
-									<input type="email" name="email" class="field_input" placeholder="Введите свой e-mail" required>
+									<input id="form_email" type="email" name="form_email" class="field_input" placeholder="Введите свой e-mail" required>
 								</div>
-								<input type="submit" name="submit" class="btn is-white" value="Получить">
+								<input id="send-form" type="submit" name="submit" class="btn is-white" value="Получить">
 							</div>
 						</form>
 						<div class="intro_cont-file">
@@ -252,7 +252,36 @@
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 		<script src="js/vendors/slick.min.js"></script>
 		<script src="js/main.bundle.js"></script>
-
+		<script>
+			$(document).ready(function(){
+				$('#send-form').on('click', function(){
+						// var form_name   = $('#form_name').val();
+						var form_email   = $('#form_email').val();
+						// var form_message = $('#form_message').val();
+						$.ajax({
+								url: "send.php", 
+								type: "post", 
+								dataType: "json", 
+								data: { 
+										// "form_name":   form_name,
+										"form_email":   form_email,
+										// "form_message": form_message
+								},
+								error:function() {
+									$("#erconts").html("Произошла ошибка!");
+								},
+								beforeSend: function() {                     
+										$("#erconts").html("Отправляем данные...");                   
+								},
+								success: function(data){
+										// $('.messages').html(data.result);
+										console.log(data.result);
+								}
+						});
+						return false;
+				});
+		});
+			</script>
 		<script>
 			// swal(
 			// 	"Оставь свой e-mail и получи документ «Как найти хорошую работу»",
